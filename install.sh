@@ -7,7 +7,7 @@ termux-change-repo
 pkg update && pkg upgrade
 
 # install packages
-pkg install which tree clang python nodejs vim nano mariadb cmatrix bison flex wget make -y
+pkg install which tree clang python nodejs vim nano mariadb cowsay  cmatrix bison flex wget make man linux-man-pages -y
 
 # install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -16,14 +16,16 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # copy .vimrc
 cp .vimrc ~
 
-# get spim src 
-wget https://sourceforge.net/code-snapshots/svn/s/sp/spimsimulator/code/spimsimulator-code-r764.zip
+# get spim src 404 not found
+# wget https://sourceforge.net/code-snapshots/svn/s/sp/spimsimulator/code/spimsimulator-code-r764.zip
 
 # unzip it, compile and install
 unzip spimsimulator-code-r764.zip 
 cd spimsimulator-code-r764/spim
 cp ../../Makefile .
 make && make install
+cd
+vim
 
 
 
